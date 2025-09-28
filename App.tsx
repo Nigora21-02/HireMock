@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StatusBar } from 'expo-status-bar';
 import { Ionicons } from '@expo/vector-icons';
+import { ColorTokens } from './constants/tokens';
 
 import HomeScreen from './screens/HomeScreen';
 import JobsScreen from './screens/JobsScreen';
@@ -30,12 +31,12 @@ export default function App() {
 
             return <Ionicons name={iconName} size={size} color={color} />;
           },
-          tabBarActiveTintColor: '#007AFF',
-          tabBarInactiveTintColor: 'gray',
+          tabBarActiveTintColor: ColorTokens.purple[500],
+          tabBarInactiveTintColor: ColorTokens.gray[500],
           headerStyle: {
-            backgroundColor: '#007AFF',
+            backgroundColor: ColorTokens.purple[500],
           },
-          headerTintColor: '#fff',
+          headerTintColor: ColorTokens.white,
           headerTitleStyle: {
             fontWeight: 'bold',
           },
