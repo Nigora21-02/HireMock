@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Alert } from 'react-native';
-import Button from '../components/Button';
+import { Button } from '../components/button';
 
 export default function JobsScreen() {
   const handleSearchJobs = () => {
@@ -22,25 +22,28 @@ export default function JobsScreen() {
       
       <View style={styles.buttonContainer}>
         <Button
-          title="Sök jobb"
           onPress={handleSearchJobs}
           variant="primary"
           size="large"
-        />
+        >
+          <Text>Sök jobb</Text>
+        </Button>
         
         <Button
-          title="Filter"
           onPress={handleFilterJobs}
           variant="secondary"
           size="medium"
-        />
+        >
+          <Text>Filter</Text>
+        </Button>
         
         <Button
-          title="Sparade jobb"
           onPress={handleSavedJobs}
           variant="outline"
           size="medium"
-        />
+        >
+          <Text>Sparade jobb</Text>
+        </Button>
       </View>
     </View>
   );

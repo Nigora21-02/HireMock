@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Alert } from 'react-native';
-import Button from '../components/Button';
+import { Button } from '../components/button';
 
 export default function ProfileScreen() {
   const handleEditProfile = () => {
@@ -25,25 +25,28 @@ export default function ProfileScreen() {
       
       <View style={styles.buttonContainer}>
         <Button
-          title="Redigera profil"
           onPress={handleEditProfile}
           variant="primary"
           size="large"
-        />
+        >
+          <Text>Redigera profil</Text>
+        </Button>
         
         <Button
-          title="Inställningar"
           onPress={handleSettings}
           variant="secondary"
           size="medium"
-        />
+        >
+          <Text>Inställningar</Text>
+        </Button>
         
         <Button
-          title="Logga ut"
           onPress={handleLogout}
           variant="danger"
           size="medium"
-        />
+        >
+          <Text>Logga ut</Text>
+        </Button>
       </View>
     </View>
   );

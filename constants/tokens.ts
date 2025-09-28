@@ -1,18 +1,18 @@
 // Primitive colors which not to be changed by themes
 
 export const ColorTokens = {
-  // Primary colors - HireMock brand colors
-  blue: {
-    50: '#E8F4FD',
-    100: '#BFDDF8', 
-    200: '#85C1F1',
-    300: '#4DA4EA',
-    400: '#2B87E3',
-    500: '#1E6FDC', 
-    600: '#1A5FC7',
-    700: '#154FAF',
-    800: '#113F96',
-    900: '#0D2F7E',
+  // Primary colors - HireMock brand colors (Purple theme)
+  purple: {
+    50: '#F3E8FF',
+    100: '#E9D5FF', 
+    200: '#D8B4FE',
+    300: '#C084FC',
+    400: '#A855F7',
+    500: '#a354ecff',
+    600: '#942db1ff',
+    700: '#6B21A8',
+    800: '#581C87',
+    900: '#4C1D95',
   },
   
   // Grayscale
@@ -41,7 +41,7 @@ export const ColorTokens = {
   red: {
     50: '#FED7D7',
     100: '#FEB2B2',
-    500: '#E53E3E',
+    500: '#b52b2bff',
     600: '#C53030',
     700: '#9B2C2C',
   },
