@@ -4,16 +4,19 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StatusBar } from 'expo-status-bar';
 import { Ionicons } from '@expo/vector-icons';
 import { ColorTokens } from './constants/tokens';
+import { ThemeProvider } from './contexts/ThemeContext';
 
 import HomeScreen from './screens/HomeScreen';
 import JobsScreen from './screens/JobsScreen';
 import ProfileScreen from './screens/ProfileScreen';
 
+
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <ThemeProvider initialTheme="light">
+      <NavigationContainer>
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
@@ -31,10 +34,10 @@ export default function App() {
 
             return <Ionicons name={iconName} size={size} color={color} />;
           },
-          tabBarActiveTintColor: ColorTokens.purple[500],
-          tabBarInactiveTintColor: ColorTokens.gray[500],
+          tabBarActiveTintColor: ColorTokens.pink[50],
+          tabBarInactiveTintColor: ColorTokens.gray[600],
           headerStyle: {
-            backgroundColor: ColorTokens.purple[500],
+            backgroundColor: ColorTokens.blue[800],
           },
           headerTintColor: ColorTokens.white,
           headerTitleStyle: {
@@ -48,5 +51,6 @@ export default function App() {
       </Tab.Navigator>
       <StatusBar style="light" />
     </NavigationContainer>
+    </ThemeProvider>
   );
 }

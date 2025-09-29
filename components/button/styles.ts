@@ -29,7 +29,15 @@ export const styles = StyleSheet.create({
   
   // Varianter
   primaryButton: {
-    backgroundColor: ColorTokens.purple[500],
+
+    shadowColor: ColorTokens.gray[600], // Use gray for shadow
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+    elevation: 8, // Android shadow
   },
   secondaryButton: {
     backgroundColor: ColorTokens.gray[500],
@@ -37,7 +45,7 @@ export const styles = StyleSheet.create({
   outlineButton: {
     backgroundColor: 'transparent',
     borderWidth: 2,
-    borderColor: ColorTokens.purple[500],
+    borderColor: ColorTokens.purple[800],
   },
   dangerButton: {
     backgroundColor: ColorTokens.red[500],
@@ -47,6 +55,16 @@ export const styles = StyleSheet.create({
   },
   ghostButton: {
     backgroundColor: 'transparent',
+  },
+  pinkButton: {
+    shadowColor: ColorTokens.gray[600],
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+    elevation: 8, // Android shadow
   },
   disabledButton: {
     backgroundColor: ColorTokens.gray[200],
@@ -76,7 +94,7 @@ export const styles = StyleSheet.create({
     color: ColorTokens.white,
   },
   outlineText: {
-    color: ColorTokens.purple[500],
+    color: ColorTokens.purple[800],
   },
   dangerText: {
     color: ColorTokens.white,

@@ -8,11 +8,23 @@ export const ColorTokens = {
     200: '#D8B4FE',
     300: '#C084FC',
     400: '#A855F7',
-    500: '#a354ecff',
+    500: '#7226FF',
     600: '#942db1ff',
     700: '#6B21A8',
     800: '#581C87',
     900: '#4C1D95',
+  },
+  blue: {
+    50: '#F0F3FF',
+    100: '#D6DEFF', 
+    200: '#B8C6FF',
+    300: '#8B9EFF',
+    400: '#5D73FF',
+    500: '#3B4FE6',
+    600: '#2A3BC9',
+    700: '#1E2B9B',
+    800: '#140263',
+    900: '#0F0146',
   },
   
   // Grayscale
@@ -46,6 +58,13 @@ export const ColorTokens = {
     700: '#9B2C2C',
   },
   
+  pink: {
+    50: '#F042FF',
+    100: '#f6e6edff',
+    500: '#d600b3ff',
+    600: '#b30099ff',
+    700: '#800066ff',
+  },
   yellow: {
     50: '#FFFFF0',
     100: '#FEFCBF',
@@ -87,3 +106,68 @@ export const SizeTokens = {
     xxxl: 32,
   },
 } as const;
+
+// Comprehensive Gradient System for all components
+export const GradientTokens = {
+  // Primary brand gradients
+  primary: {
+    colors: ['#7226ff', '#160078'], // HireMock brand gradient
+    start: { x: 0, y: 0 },
+    end: { x: 1, y: 0 }, // Horizontal (left to right)
+  },
+  primaryVertical: {
+    colors: ['#7226ff', '#160078'],
+    start: { x: 0, y: 0 },
+    end: { x: 0, y: 1 }, // Vertical (top to bottom)
+  },
+  primaryReverse: {
+    colors: ['#140263ff', '#7226ff'], // Reversed for variety
+    start: { x: 0, y: 0 },
+    end: { x: 1, y: 0 },
+  },
+  
+  // Pink gradient (från din bild)
+  pink: {
+    colors: ['#F042FF', '#f6e6edff'],
+    start: { x: 0, y: 0 },
+    end: { x: 1, y: 0 }, // Horizontal
+  },
+  
+  // Secondary gradients (for borders, icons, etc.)
+  secondary: {
+    colors: [ColorTokens.purple[400], ColorTokens.purple[600]],
+    start: { x: 0, y: 0 },
+    end: { x: 1, y: 0 },
+  },
+  
+  // Status gradients
+  success: {
+    colors: [ColorTokens.green[100], ColorTokens.green[500]],
+    start: { x: 0, y: 0 },
+    end: { x: 1, y: 0 },
+  },
+  error: {
+    colors: [ColorTokens.red[100], ColorTokens.red[500]],
+    start: { x: 0, y: 0 },
+    end: { x: 1, y: 0 },
+  },
+  warning: {
+    colors: [ColorTokens.yellow[100], ColorTokens.yellow[500]],
+    start: { x: 0, y: 0 },
+    end: { x: 1, y: 0 },
+  },
+  
+  // Subtle gradients (för backgrounds, borders)
+  subtle: {
+    colors: [ColorTokens.gray[100], ColorTokens.gray[300]],
+    start: { x: 0, y: 0 },
+    end: { x: 1, y: 0 },
+  },
+  
+  // Special effects
+  shine: {
+    colors: [ColorTokens.white, 'transparent', ColorTokens.white],
+    start: { x: 0, y: 0 },
+    end: { x: 1, y: 0 },
+  },
+};

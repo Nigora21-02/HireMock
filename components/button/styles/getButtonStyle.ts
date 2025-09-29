@@ -16,8 +16,7 @@ export const getButtonStyle = (
   // Full width styling
   if (fullWidth) {
     baseStyle.push(styles.fullWidth);
-  }
-  
+  } 
   // Variant styling
   switch (variant) {
     case 'primary':
@@ -37,6 +36,9 @@ export const getButtonStyle = (
       break;
     case 'ghost':
       baseStyle.push(styles.ghostButton);
+      break;
+    case 'pink':
+      baseStyle.push(styles.pinkButton);
       break;
   }
   
