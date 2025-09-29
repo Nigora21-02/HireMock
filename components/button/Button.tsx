@@ -66,7 +66,28 @@ export default function Button({
     );
   }
 
-  // Regular TouchableOpacity for other variants
+  
+  if (variant === 'danger' && !disabled && !loading) {
+    return (
+      <TouchableOpacity
+        onPress={onPress}
+        disabled={disabled || loading}
+        activeOpacity={0.8}
+        accessibilityLabel={accessibilityLabel}
+      >
+        <LinearGradient
+          colors={GradientTokens.error.colors as [string, string]}
+          start={GradientTokens.error.start}
+          end={GradientTokens.error.end}
+          style={Array.isArray(buttonStyle) ? Object.assign({}, ...buttonStyle) : buttonStyle}
+        >
+          {children}
+        </LinearGradient>
+      </TouchableOpacity>
+    );
+  }
+
+  
   return (
     <TouchableOpacity
       style={buttonStyle}

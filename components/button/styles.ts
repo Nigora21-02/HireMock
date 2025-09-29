@@ -44,11 +44,18 @@ export const styles = StyleSheet.create({
   },
   outlineButton: {
     backgroundColor: 'transparent',
-    borderWidth: 2,
-    borderColor: ColorTokens.purple[800],
+    borderWidth: 1.2,
+    borderColor: ColorTokens.pink[500],
   },
   dangerButton: {
-    backgroundColor: ColorTokens.red[500],
+    shadowColor: '#E53E3E',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+    elevation: 8, // Android shadow
   },
   successButton: {
     backgroundColor: ColorTokens.green[500],
@@ -94,7 +101,7 @@ export const styles = StyleSheet.create({
     color: ColorTokens.white,
   },
   outlineText: {
-    color: ColorTokens.purple[800],
+    color: ColorTokens.blue[900],
   },
   dangerText: {
     color: ColorTokens.white,

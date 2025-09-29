@@ -53,8 +53,8 @@ export const ColorTokens = {
   red: {
     50: '#FED7D7',
     100: '#FEB2B2',
-    500: '#b52b2bff',
-    600: '#C53030',
+    500: '#FF6B6B',
+    600: '#E53E3E',
     700: '#9B2C2C',
   },
   
@@ -147,7 +147,7 @@ export const GradientTokens = {
     end: { x: 1, y: 0 },
   },
   error: {
-    colors: [ColorTokens.red[100], ColorTokens.red[500]],
+    colors: [ColorTokens.red[500], ColorTokens.red[600]], 
     start: { x: 0, y: 0 },
     end: { x: 1, y: 0 },
   },

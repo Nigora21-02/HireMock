@@ -29,7 +29,7 @@ export const getButtonTextStyle = (variant: ButtonVariant, disabled: boolean): T
     case 'outline':
       return {
         ...baseStyle,
-        color: ColorTokens.purple[800],
+        color: ColorTokens.blue[700],
       };
     case 'danger':
       return {
