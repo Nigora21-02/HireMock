@@ -18,18 +18,20 @@ export default function HomeScreen() {
       
       <View style={styles.buttonContainer}>
         <Button
-          title="Hitta jobb"
           onPress={handlePrimaryAction}
           variant="primary"
           size="large"
-        />
+        >
+          Hitta jobb
+        </Button>
         
         <Button
-          title="Mitt CV"
           onPress={handleSecondaryAction}
           variant="outline"
           size="medium"
-        />
+        >
+          Mitt CV
+        </Button>
       </View>
     </View>
   );
