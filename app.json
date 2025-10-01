@@ -28,6 +28,12 @@
     },
     "plugins": [
       "expo-font"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "af9cf894-9b8b-4953-96b2-cc0e516075df"
+      }
+    },
+    "owner": "2102kh"
   }
 }
