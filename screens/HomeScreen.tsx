@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Alert } from 'react-native';
-import Button from '../components/Button';
+import Button from '../components/button';
 
 export default function HomeScreen() {
   const handlePrimaryAction = () => {

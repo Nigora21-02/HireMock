@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StatusBar } from 'expo-status-bar';
 import { Ionicons } from '@expo/vector-icons';
 import { ColorTokens } from './constants/tokens';
-import { ThemeProvider } from './contexts/ThemeContext';
+
 
 import HomeScreen from './screens/HomeScreen';
 import JobsScreen from './screens/JobsScreen';
@@ -15,7 +15,7 @@ const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <ThemeProvider initialTheme="light">
+
       <NavigationContainer>
       <Tab.Navigator
         screenOptions={({ route }) => ({
@@ -51,6 +51,6 @@ export default function App() {
       </Tab.Navigator>
       <StatusBar style="light" />
     </NavigationContainer>
-    </ThemeProvider>
+    
   );
 }
