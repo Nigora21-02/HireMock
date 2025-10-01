@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Alert } from 'react-native';
-import Button from '../components/button';
+import Button, { ButtonText } from '../components/button';
+import { ColorTokens } from '../constants/tokens';
 
 export default function HomeScreen() {
   const handlePrimaryAction = () => {
@@ -20,17 +21,17 @@ export default function HomeScreen() {
         <Button
           onPress={handlePrimaryAction}
           variant="primary"
-          size="large"
+          size="medium"
         >
-          Hitta jobb
+         <ButtonText variant="primary" size="medium">Starta intervju</ButtonText>
         </Button>
         
         <Button
           onPress={handleSecondaryAction}
-          variant="outline"
+          variant="pink"
           size="medium"
         >
-          Mitt CV
+          <ButtonText variant="pink" size="medium">Mitt CV</ButtonText>
         </Button>
       </View>
     </View>
@@ -40,7 +41,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: ColorTokens.blue[50],
     alignItems: 'center',
     justifyContent: 'center',
   },

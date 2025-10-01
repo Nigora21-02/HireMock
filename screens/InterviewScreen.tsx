@@ -3,50 +3,47 @@ import { StyleSheet, Text, View, Alert } from 'react-native';
 import Button, { ButtonText } from '../components/button';
 import { ColorTokens } from '../constants/tokens';
 
-export default function ProfileScreen() {
-  const handleEditProfile = () => {
-    Alert.alert('Redigera profil', 'Öppnar profilredigeraren');
+export default function InterviewScreen() {
+  const handleStartInterview = () => {
+    Alert.alert('AI Intervju', 'Startar AI-driven intervju...');
   };
 
-  const handleSettings = () => {
-    Alert.alert('Inställningar', 'Öppnar inställningar');
+  const handleSelectCategory = () => {
+    Alert.alert('Kategori', 'Välj intervjukategori: Tech, Behavioral, Case Study');
   };
 
-  const handleLogout = () => {
-    Alert.alert('Logga ut', 'Är du säker på att du vill logga ut?', [
-      { text: 'Avbryt', style: 'cancel' },
-      { text: 'Logga ut', style: 'destructive' },
-    ]);
+  const handleViewResults = () => {
+    Alert.alert('Resultat', 'Visar dina intervjuresultat och AI-feedback');
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Profil</Text>
-      <Text style={styles.subtitle}>Hantera din profil och inställningar</Text>
+      <Text style={styles.title}>AI Intervju</Text>
+      <Text style={styles.subtitle}>Öva intervjuer med AI-assistent</Text>
       
       <View style={styles.buttonContainer}>
         <Button
-          onPress={handleEditProfile}
+          onPress={handleStartInterview}
           variant="primary"
           size="medium"
         >
-          <ButtonText variant="primary" size="medium">Redigera profil</ButtonText>
+         <ButtonText variant="primary" size="medium">🎥 Starta AI Intervju</ButtonText>
         </Button>
         
         <Button
-          onPress={handleSettings}
+          onPress={handleSelectCategory}
           variant="pink"
           size="medium"
         >
-          <ButtonText variant="pink" size="medium">Inställningar</ButtonText>
+          <ButtonText variant="pink" size="medium">📋 Välj Kategori</ButtonText>
         </Button>
         
         <Button
-          onPress={handleLogout}
-          variant="danger"
+          onPress={handleViewResults}
+          variant="outline"
           size="medium"
         >
-          <ButtonText variant="danger" size="medium">Logga ut</ButtonText>
+          <ButtonText variant="outline" size="medium">📊 Mina Resultat</ButtonText>
         </Button>
       </View>
     </View>
