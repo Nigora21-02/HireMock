@@ -65,7 +65,7 @@ jobs:
           packager: npm
 
       - name: 🤖 Build Android Preview
-        run: eas build --platform android --profile preview --non-interactive
+        run: eas build --platform android --profile preview
 
       - name: 📱 Get Build Artifact URL
         id: build-url
