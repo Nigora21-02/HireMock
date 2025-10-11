@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Alert } from 'react-native';
 import Button, { ButtonText } from '../components/button';
 import { ColorTokens } from '../constants/tokens';
-import InputField from '../components/input/InputField';
 import ProgressBar from '../components/progressBar/ProgressBar';
 import Loader from '../components/loader/Loader';
+
 
 export default function HomeScreen() {
 
@@ -39,7 +39,8 @@ export default function HomeScreen() {
         </Button>
 
         <View style={{ gap: 15, marginTop: 20 }}>
-          <Loader size="md" />
+          <Loader size="md" variant='spinner' />
+          
           <ProgressBar progress={progress} />
           <Button
             onPress={() => setProgress(p => (p >= 100 ? 0 : Math.min(100, p + 10)))}
