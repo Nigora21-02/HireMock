@@ -2,11 +2,12 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StatusBar } from 'expo-status-bar';
-import { Ionicons } from '@expo/vector-icons';
 import { ColorTokens } from './constants/tokens';
 import HomeScreen from './screens/HomeScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import InterviewScreen from './screens/InterviewScreen';
+import Icon from './components/icon/Icon';
+import { iconMap } from './components/icon/iconMap';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,19 +17,17 @@ export default function App() {
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
-            let iconName: keyof typeof Ionicons.glyphMap;
+            // Map route to iconMap key
+            let iconKey: keyof typeof iconMap = 'home';
+            if (route.name === 'Hem') iconKey = 'home';
+            else if (route.name === 'Intervju') iconKey = 'videokamera';
+            else if (route.name === 'Profil') iconKey = 'profile';
 
-            if (route.name === 'Hem') {
-              iconName = focused ? 'home' : 'home-outline';
-            } else if (route.name === 'Intervju') {
-              iconName = focused ? 'videocam' : 'videocam-outline';
-            } else if (route.name === 'Profil') {
-              iconName = focused ? 'person' : 'person-outline';
-            } else {
-              iconName = 'help-outline';
-            }
+            // use 'md' for tabBar icons
+            const iconSize: 'md' = 'md';
+            const iconColor = focused ? 'primary' : 'secondary';
 
-            return <Ionicons name={iconName} size={size} color={color} />;
+            return <Icon {...iconMap[iconKey]} size={iconSize} color={iconColor} filled={focused} focused={focused} />;
           },
           tabBarActiveTintColor: ColorTokens.blue[800],
           tabBarInactiveTintColor: ColorTokens.gray[600],
@@ -47,6 +46,5 @@ export default function App() {
       </Tab.Navigator>
       <StatusBar style="light" />
     </NavigationContainer>
-    
   );
 }
