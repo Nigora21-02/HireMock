@@ -39,8 +39,6 @@ export default function HomeScreen() {
         </Button>
 
         <View style={{ gap: 15, marginTop: 20 }}>
-          <Loader size="md" variant='spinner' />
-          
           <ProgressBar progress={progress} />
           <Button
             onPress={() => setProgress(p => (p >= 100 ? 0 : Math.min(100, p + 10)))}
