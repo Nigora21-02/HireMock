@@ -4,6 +4,7 @@ import Button, { ButtonText } from '../components/button';
 import { ColorTokens } from '../constants/tokens';
 import InputField from '../components/input/InputField';
 import ProgressBar from '../components/progressBar/ProgressBar';
+import Loader from '../components/loader/Loader';
 
 export default function HomeScreen() {
 
@@ -38,7 +39,7 @@ export default function HomeScreen() {
         </Button>
 
         <View style={{ gap: 15, marginTop: 20 }}>
-
+          <Loader size="md" />
           <ProgressBar progress={progress} />
           <Button
             onPress={() => setProgress(p => (p >= 100 ? 0 : Math.min(100, p + 10)))}
