@@ -105,6 +105,13 @@ export const SizeTokens = {
     xxl: 24,
     xxxl: 32,
   },
+  height: {
+    xs: 8,
+    sm: 12,
+    md: 16,
+    lg: 24,
+    xl: 32,
+  },
 } as const;
 
 // Comprehensive Gradient System for all components
