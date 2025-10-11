@@ -3,8 +3,6 @@ import { StyleSheet, Text, View, Alert } from 'react-native';
 import Button, { ButtonText } from '../components/button';
 import { ColorTokens } from '../constants/tokens';
 import ProgressBar from '../components/progressBar/ProgressBar';
-import Loader from '../components/loader/Loader';
-
 
 export default function HomeScreen() {
 

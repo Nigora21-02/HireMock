@@ -61,6 +61,9 @@ export const ColorTokens = {
   pink: {
     50: '#F042FF',
     100: '#f6e6edff',
+    200: '#e8bbdfff',
+    300: '#d8a3dfff',
+    400: '#ee97f0ff',
     500: '#d600b3ff',
     600: '#b30099ff',
     700: '#800066ff',
