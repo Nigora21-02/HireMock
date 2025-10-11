@@ -122,6 +122,12 @@ export const GradientTokens = {
     start: { x: 0, y: 0 },
     end: { x: 1, y: 0 }, // Horizontal (left to right)
   },
+  // Unique ProgressBar gradient (so it stands out from buttons)
+  progressBar: {
+    colors: ['#f7b4fdff', '#0b0698ff'], // Soft pink to blue for a modern look
+    start: { x: 0, y: 0 },
+    end: { x: 1, y: 0 },
+  },
   primaryVertical: {
     colors: ['#7226ff', '#160078'],
     start: { x: 0, y: 0 },
@@ -169,6 +175,25 @@ export const GradientTokens = {
     colors: [ColorTokens.gray[100], ColorTokens.gray[300]],
     start: { x: 0, y: 0 },
     end: { x: 1, y: 0 },
+  },
+
+  // ProgressBar background (metallic, bright effect)
+  progressBarBg: {
+    colors: [
+      ColorTokens.gray[600],
+      ColorTokens.gray[700],
+      ColorTokens.gray[800],
+      ColorTokens.gray[700],
+      ColorTokens.gray[900],
+    ],
+    start: { x: 0, y: 0 },
+    end: { x: 1, y: 0 },
+    borderRadius: 'capsule',
+    shadowColor: ColorTokens.gray[900],
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.10,
+    shadowRadius: 6,
+    elevation: 3,
   },
   
   // Special effects

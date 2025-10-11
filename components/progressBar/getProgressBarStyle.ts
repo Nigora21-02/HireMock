@@ -1,3 +1,15 @@
+// Gradient for track
+export const TRACK_GRADIENT = {
+  colors: [ColorTokens.gray[50], ColorTokens.gray[200], ColorTokens.gray[500]] as const,
+  start: { x: 0, y: 0 },
+  end: { x: 0, y: 1 },
+};
+// Gradient for fill
+export const FILL_GRADIENT = {
+  colors: [ColorTokens.blue[200], ColorTokens.blue[500], ColorTokens.blue[900]] as const,
+  start: { x: 0, y: 0 },
+  end: { x: 0, y: 1 },
+};
 import { StyleSheet } from "react-native";
 import { ProgressBarSize, ProgressBarType } from "./types";
 import { ColorTokens, SizeTokens, GradientTokens } from "../../constants/tokens";
@@ -43,10 +55,13 @@ export const getProgressBarStyles = (size: ProgressBarSize = "sm") => {
     track: {
       width: "100%",
       height,
-      backgroundColor: ColorTokens.gray[400],
+      //backgroundColor: ColorTokens.gray[800],
       borderRadius: height / 2,
       overflow: "hidden",
       position: "relative",
+      borderTopWidth: 0.4,
+      borderTopColor: "rgba(97, 94, 94, 0.7)",
+
     },
     // --- fill (gradient)
     fill: {
@@ -55,6 +70,7 @@ export const getProgressBarStyles = (size: ProgressBarSize = "sm") => {
       left: 0,
       top: 0,
       borderRadius: height / 2,
+      backgroundColor: ColorTokens.blue[400], // modern blå fill
     },
     // --- glow effect
     glow: {
@@ -67,8 +83,8 @@ export const getProgressBarStyles = (size: ProgressBarSize = "sm") => {
       backgroundColor: ColorTokens.purple[500] + "55",
       shadowColor: ColorTokens.purple[500],
       shadowOpacity: 0.6,
-      shadowRadius: 8,
-      elevation: 6,
+      shadowRadius: 15,
+      elevation: 10,
       zIndex: -1,
     },
 
@@ -85,5 +101,11 @@ export const getProgressBarStyles = (size: ProgressBarSize = "sm") => {
       textShadowOffset: { width: 0, height: 1 },
       textShadowRadius: 2,
     },
+    innerShine: {
+      ...StyleSheet.absoluteFillObject,
+      top: 0,
+      height: "40%",
+      backgroundColor: "rgba(255,255,255,0.15)",
+    }
   });
 };
