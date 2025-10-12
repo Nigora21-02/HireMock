@@ -1,8 +1,8 @@
 
 import React, { useState } from 'react';
-
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { CategorySelector, LanguageSelector, LevelSelector } from '../components/chip';
+import TimerSelector from '../components/timer/TimerSelector';
 import Icon from '../components/icon/Icon';
 import { iconMap } from '../components/icon/iconMap';
 import Button, { ButtonText } from '../components/button';
@@ -26,19 +26,21 @@ const levels = [
   { label: 'Senior', value: 'senior' },
 ];
 
-
 export default function InterviewScreen() {
   const [category, setCategory] = useState(categories[0].value);
   const [language, setLanguage] = useState(languages[0].value);
   const [level, setLevel] = useState(levels[0].value);
+    const [timer, setTimer] = useState(3);
 
   return (
     <View style={styles.container}>
       <View>
-        <Text style={styles.title}>Förbered AI-intervjun</Text>
-        <Text style={styles.description}>
-          Välj kategori, språk och nivå för att starta en AI-baserad intervju. Du kan ändra dina val när som helst.
-        </Text>
+        
+      </View>
+      <View>
+        <Text style={styles.title}>Anpassa intervjun efter dig </Text>
+        <Text style={styles.description}>Välj kategori, språk, nivå och timer</Text>
+       
         {/* Kategori */}
         <View style={{ backgroundColor: ColorTokens.gray[200], borderRadius: 8, paddingHorizontal: 16, marginBottom: 12,paddingTop: 10 }}>
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8  }}>
@@ -64,8 +66,8 @@ export default function InterviewScreen() {
           />
         </View>
 
-        <View style={{ backgroundColor: ColorTokens.gray[200], borderRadius: 8, paddingHorizontal: 16,paddingTop: 10 }}>
-          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+        <View style={{ backgroundColor: ColorTokens.gray[200], borderRadius: 8, paddingHorizontal: 16, paddingTop: 10 }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 8 }}>
             <Icon name={iconMap.star.name} type={iconMap.star.type} size="md" color="pink" />
             <Text style={styles.label}>Nivå</Text>
           </View>
@@ -75,7 +77,10 @@ export default function InterviewScreen() {
             onSelect={setLevel}
           />
         </View>
+        
       </View>
+        <TimerSelector timer={timer} onSelect={setTimer} />
+    
       <View style={styles.buttonWrapper}>
         <Button
           variant='primary'
@@ -94,13 +99,13 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: SizeTokens.spacing.md,
     gap: SizeTokens.spacing.lg,
-    justifyContent: 'space-between',
+    
   },
   description: {
     fontSize: 15,
     color: ColorTokens.gray[600],
     textAlign: 'center',
-    marginBottom: 18,
+    marginBottom: 24,
   },
   buttonWrapper: {
    marginBottom: 30,    
@@ -108,7 +113,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginBottom: 24,
     textAlign: 'center',
   },
   label: {
