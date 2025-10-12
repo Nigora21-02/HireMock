@@ -1,2 +1,2 @@
 export { default as Chip } from './Chip';
-export * from './OptionSelector';
+export * from '../blockSelector/OptionSelector';
