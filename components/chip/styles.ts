@@ -3,8 +3,8 @@ import { ColorTokens, SizeTokens } from '../../constants/tokens';
 
 const styles = StyleSheet.create({
   chip: {
-    paddingHorizontal: SizeTokens.spacing.md,
-    paddingVertical: SizeTokens.spacing.sm,
+    paddingHorizontal: SizeTokens.spacing.lg,
+    paddingVertical: SizeTokens.spacing.xs,
     borderRadius: 20,
     backgroundColor: ColorTokens.blue[200],
     borderWidth: 1,

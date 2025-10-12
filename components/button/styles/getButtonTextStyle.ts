@@ -4,7 +4,7 @@ import { ColorTokens,GradientTokens } from '../../../constants/tokens';
 
 export const getButtonTextStyle = (variant: ButtonVariant, disabled: boolean): TextStyle => {
   const baseStyle: TextStyle = {
-    fontWeight: '600',
+    fontSize: 16,
     textAlign: 'center',
   };
 

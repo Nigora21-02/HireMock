@@ -1,8 +1,10 @@
 
 import React, { useState } from 'react';
 
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { CategorySelector, LanguageSelector, LevelSelector } from '../components/chip';
+import Icon from '../components/icon/Icon';
+import { iconMap } from '../components/icon/iconMap';
 import Button, { ButtonText } from '../components/button';
 import { ColorTokens, SizeTokens } from '../constants/tokens';
 
@@ -38,8 +40,11 @@ export default function InterviewScreen() {
           Välj kategori, språk och nivå för att starta en AI-baserad intervju. Du kan ändra dina val när som helst.
         </Text>
         {/* Kategori */}
-        <View style={{ backgroundColor: ColorTokens.gray[200], borderRadius: 8, paddingHorizontal: 16, marginBottom: 12 }}>
-          <Text style={styles.label}>Kategori</Text>
+        <View style={{ backgroundColor: ColorTokens.gray[200], borderRadius: 8, paddingHorizontal: 16, marginBottom: 12,paddingTop: 10 }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8  }}>
+            <Icon name={iconMap.grid.name} type={iconMap.grid.type} size="md" color="pink" />
+            <Text style={styles.label}>Kategori</Text>
+          </View>
           <CategorySelector
             categories={categories}
             selectedCategory={category}
@@ -47,8 +52,11 @@ export default function InterviewScreen() {
           />
         </View>
 
-        <View style={{ backgroundColor: ColorTokens.gray[200], borderRadius: 8, paddingHorizontal: 16, marginBottom: 12 }}>
-          <Text style={styles.label}>Språk</Text>
+        <View style={{ backgroundColor: ColorTokens.gray[200], borderRadius: 8, paddingHorizontal: 16, marginBottom: 12, paddingTop: 10 }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+            <Icon name={iconMap.globe.name} type={iconMap.globe.type} size="md" color="pink" />
+            <Text style={styles.label}>Språk</Text>
+          </View>
           <LanguageSelector
             languages={languages}
             selectedLanguage={language}
@@ -56,8 +64,11 @@ export default function InterviewScreen() {
           />
         </View>
 
-        <View style={{ backgroundColor: ColorTokens.gray[200], borderRadius: 8, paddingHorizontal: 16 }}>
-          <Text style={styles.label}>Nivå</Text>
+        <View style={{ backgroundColor: ColorTokens.gray[200], borderRadius: 8, paddingHorizontal: 16,paddingTop: 10 }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+            <Icon name={iconMap.star.name} type={iconMap.star.type} size="md" color="pink" />
+            <Text style={styles.label}>Nivå</Text>
+          </View>
           <LevelSelector
             levels={levels}
             selectedLevel={level}

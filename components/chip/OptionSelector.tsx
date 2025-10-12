@@ -5,7 +5,7 @@ import { Option, OptionSelectorProps } from './types';
 
 // Generic OptionSelector
 export const OptionSelector: React.FC<OptionSelectorProps> = ({ options, selected, onSelect }) => (
-  <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginVertical: 8 }}>
+  <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginVertical: 12 }}>
     {options.map(option => (
       <Chip
         key={option.value}

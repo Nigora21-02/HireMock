@@ -1,4 +1,3 @@
-
 import { IconType, IconProps } from './types';
 
 // Central icon map for all app icons (now all Ionicons)
@@ -19,8 +18,11 @@ export const iconMap: Record<string, Omit<IconProps, 'size' | 'color' | 'style'>
   notificationsFilled: { name: 'notifications', type: 'ion' },
   chat: { name: 'chatbubble-ellipses-outline', type: 'ion' },
   chatFilled: { name: 'chatbubble-ellipses', type: 'ion' },
+  
 
   // Actions & status
+  list: { name: 'list-outline', type: 'ion' },
+  listFilled: { name: 'list', type: 'ion' },
   add: { name: 'add-outline', type: 'ion' },
   addFilled: { name: 'add', type: 'ion' },
   edit: { name: 'pencil-outline', type: 'ion' },
@@ -41,6 +43,14 @@ export const iconMap: Record<string, Omit<IconProps, 'size' | 'color' | 'style'>
   upload: { name: 'cloud-upload-outline', type: 'ion' },
   download: { name: 'cloud-download-outline', type: 'ion' },
 
+  // Category alternatives
+  apps: { name: 'apps-outline', type: 'ion' },
+  appsFilled: { name: 'apps', type: 'ion' },
+  folder: { name: 'folder-outline', type: 'ion' },
+  folderFilled: { name: 'folder', type: 'ion' },
+  grid: { name: 'grid-outline', type: 'ion' },
+  gridFilled: { name: 'grid', type: 'ion' },
+
   // Interview specific
   mic: { name: 'mic-outline', type: 'ion' },
   micFilled: { name: 'mic', type: 'ion' },
@@ -53,4 +63,8 @@ export const iconMap: Record<string, Omit<IconProps, 'size' | 'color' | 'style'>
   starFilled: { name: 'star', type: 'ion' },
   eye: { name: 'eye-outline', type: 'ion' },
   eyeOff: { name: 'eye-off-outline', type: 'ion' },
+
+  // Language
+  globe: { name: 'globe-outline', type: 'ion' },
+  globeFilled: { name: 'globe', type: 'ion' },
 };

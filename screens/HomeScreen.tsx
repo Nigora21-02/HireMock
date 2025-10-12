@@ -26,7 +26,7 @@ export default function HomeScreen() {
           variant="primary"
           size="medium"
         >
-          <ButtonText variant="primary" size="medium">Starta intervju</ButtonText>
+          <ButtonText variant="primary" size="medium">Ta nästa steg mot drömjobbet !</ButtonText>
         </Button>
         <Button
           onPress={handleSecondaryAction}
