@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Alert } from 'react-native';
-import Button, { ButtonText } from '../components/button';
-import { ColorTokens } from '../constants/tokens';
-import ProgressBar from '../components/progressBar/ProgressBar';
+import Button, { ButtonText } from '../../components/button';
+import { ColorTokens } from '../../constants/tokens';
+import ProgressBar from '../../components/progressBar/ProgressBar';
 
 export default function HomeScreen() {
 

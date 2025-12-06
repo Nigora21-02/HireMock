@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Alert } from 'react-native';
-import Button, { ButtonText } from '../components/button';
-import { ColorTokens } from '../constants/tokens';
+import Button, { ButtonText } from '../../components/button';
+import { ColorTokens } from '../../constants/tokens';
 
 export default function ProfileScreen() {
   const handleEditProfile = () => {

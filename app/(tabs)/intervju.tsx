@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import BlockSelector from '../components/blockSelector/BlockSelector';
-import TimerSelector from '../components/timer/TimerSelector';
-import Button, { ButtonText } from '../components/button';
-import { ColorTokens, SizeTokens } from '../constants/tokens';
+import { View, Text, StyleSheet } from 'react-native';
+import { useRouter } from 'expo-router';
+import BlockSelector from '../../components/blockSelector/BlockSelector';
+import TimerSelector from '../../components/timer/TimerSelector';
+import Button, { ButtonText } from '../../components/button';
+import { ColorTokens, SizeTokens } from '../../constants/tokens';
 
 
 const categories = [
@@ -23,15 +24,24 @@ const levels = [
   { label: 'Senior', value: 'senior' },
 ];
 
-type InterviewScreenProps = {
-  navigation: any;
-};
-
-export default function InterviewScreen({ navigation }: InterviewScreenProps) {
+export default function InterviewScreen() {
+  const router = useRouter();
   const [category, setCategory] = useState(categories[0].value);
   const [language, setLanguage] = useState(languages[0].value);
   const [level, setLevel] = useState(levels[0].value);
   const [timer, setTimer] = useState(3);
+
+  const handleStartInterview = () => {
+    router.push({
+      pathname: '/interview-session',
+      params: {
+        category,
+        language,
+        level,
+        timer: timer.toString(),
+      },
+    });
+  };
 
   return (
     <View style={styles.container}>
@@ -54,12 +64,7 @@ export default function InterviewScreen({ navigation }: InterviewScreenProps) {
           <Button
             variant='primary'
             size='medium'
-            onPress={() => navigation.navigate('InterviewSession', {
-              category,
-              language,
-              level,
-              timer,
-            })}
+            onPress={handleStartInterview}
           >
             <ButtonText variant='primary'>Starta AI-intervju</ButtonText>
           </Button>

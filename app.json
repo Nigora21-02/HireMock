@@ -7,16 +7,18 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
+    "scheme": "hiremock",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.nigora.hiremock"
     },
     "android": {
-        "package": "com.nigora.hiremock",
+      "package": "com.nigora.hiremock",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -27,8 +29,11 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": ["expo-font"],
+    "plugins": ["expo-font", "expo-router"],
     "extra": {
+      "router": {
+        "origin": false
+      },
       "eas": {
         "projectId": "af9cf894-9b8b-4953-96b2-cc0e516075df"
       }
