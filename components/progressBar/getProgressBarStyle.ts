@@ -22,9 +22,9 @@ export const GRADIENTS: Record<ProgressBarType, [string, string]> = {
 
 // 📏 Heights by tokens
 const HEIGHTS: Record<ProgressBarSize, number> = {
-  sm: SizeTokens.height.sm,
-  md: SizeTokens.height.md,
-  lg: SizeTokens.height.lg,
+  sm: SizeTokens.height.xs,
+  md: SizeTokens.height.sm,
+  lg: SizeTokens.height.md,
 };
 
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
 import BlockSelector from '../../components/blockSelector/BlockSelector';
-import TimerSelector from '../../components/timer/TimerSelector';
+import TimerSelector from '../../components/timerSelector/TimerSelector';
 import Button, { ButtonText } from '../../components/button';
 import { ColorTokens, SizeTokens } from '../../constants/tokens';
 
