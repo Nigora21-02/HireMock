@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import Button, { ButtonText } from '../components/button';
-import { ColorTokens, SizeTokens } from '../constants/tokens';
+import Button, { ButtonText } from '../../components/button';
+import { ColorTokens, SizeTokens } from '../../constants/tokens';
 
 export default function InterviewSessionScreen() {
   const params = useLocalSearchParams();

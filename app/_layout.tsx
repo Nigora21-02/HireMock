@@ -7,7 +7,7 @@ export default function RootLayout() {
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="(tabs)" />
         <Stack.Screen 
-          name="interview-session" 
+          name="screens/InterviewSessionScreen" 
           options={{
             headerShown: true,
             title: 'AI-Intervju',
