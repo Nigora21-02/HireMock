@@ -63,6 +63,8 @@ export const iconMap: Record<string, Omit<IconProps, 'size' | 'color' | 'style'>
   starFilled: { name: 'star', type: 'ion' },
   eye: { name: 'eye-outline', type: 'ion' },
   eyeOff: { name: 'eye-off-outline', type: 'ion' },
+  bulb: { name: 'bulb-outline', type: 'ion' },
+  bulbFilled: { name: 'bulb', type: 'ion' },
 
   // Language
   globe: { name: 'globe-outline', type: 'ion' },

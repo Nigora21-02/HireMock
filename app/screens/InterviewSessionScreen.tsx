@@ -21,6 +21,7 @@ export default function InterviewSessionScreen() {
   const [currentQuestion, setCurrentQuestion] = useState(1);
   const [isRecording, setIsRecording] = useState(false);
   const [timeLeft, setTimeLeft] = useState(timer * 60);
+  const [showTip, setShowTip] = useState(false);
   const totalQuestions = MOCK_QUESTIONS.length;
 
   // Timer countdown
@@ -82,14 +83,40 @@ export default function InterviewSessionScreen() {
           gap: SizeTokens.spacing.md,
         }}
       >
+        {/* Timer and Actions */}
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+          <Button
+            variant="outline"
+            size="small"
+            onPress={handleEndInterview}
+          >
+            <ButtonText variant="outline">Avsluta</ButtonText>
+          </Button>
 
-        <View style={{ alignItems: 'center' }}>
           <CircularTimer
             timeText={formatTime(timeLeft)}
             label="återstår"
             size="lg"
             state={getTimerState()}
           />
+
+          {currentQuestion < totalQuestions ? (
+            <Button
+              variant="primary"
+              size="small"
+              onPress={handleNextQuestion}
+            >
+              <ButtonText variant="primary">Nästa</ButtonText>
+            </Button>
+          ) : (
+            <Button
+              variant="primary"
+              size="small"
+              onPress={handleEndInterview}
+            >
+              <ButtonText variant="primary">Slutför</ButtonText>
+            </Button>
+          )}
         </View>
 
         {/* Progress */}
@@ -136,49 +163,34 @@ export default function InterviewSessionScreen() {
           onStartRecording={() => setIsRecording(true)}
           onStopRecording={() => setIsRecording(false)}
         />
+        
         <Card
           title={`Fråga ${currentQuestion}`}
           subtitle={MOCK_QUESTIONS[currentQuestion - 1]}
-        />
-      </ScrollView>
-
-      {/* Footer */}
-      <View
-        style={{
-          flexDirection: 'row',
-          padding: SizeTokens.spacing.lg,
-          gap: SizeTokens.spacing.md,
-          borderTopWidth: 1,
-          borderTopColor: ColorTokens.gray[200],
-          backgroundColor: ColorTokens.white,
-        }}
-      >
-        <Button
-          variant="outline"
-          size="medium"
-          onPress={handleEndInterview}
+          showTipIcon={true}
+          onTipPress={() => setShowTip(!showTip)}
         >
-          <ButtonText variant="outline">Avsluta</ButtonText>
-        </Button>
-
-        {currentQuestion < totalQuestions ? (
-          <Button
-            variant="primary"
-            size="medium"
-            onPress={handleNextQuestion}
-          >
-            <ButtonText variant="primary">Nästa fråga</ButtonText>
-          </Button>
-        ) : (
-          <Button
-            variant="primary"
-            size="medium"
-            onPress={handleEndInterview}
-          >
-            <ButtonText variant="primary">Slutför</ButtonText>
-          </Button>
-        )}
-      </View>
+          {showTip && (
+            <View style={{ 
+              marginTop: SizeTokens.spacing.md, 
+              padding: SizeTokens.spacing.md,
+              backgroundColor: ColorTokens.yellow[50],
+              borderRadius: 8,
+              borderLeftWidth: 3,
+              borderLeftColor: ColorTokens.yellow[500]
+            }}>
+              <Text style={{ 
+                fontSize: 14, 
+                color: ColorTokens.gray[700],
+                lineHeight: 20
+              }}>
+                <Text style={{ fontWeight: '600' }}>Tips: </Text>
+                Strukturera ditt svar med konkreta exempel. Använd STAR-metoden (Situation, Task, Action, Result).
+              </Text>
+            </View>
+          )}
+        </Card>
+      </ScrollView>
     </View>
   );
 }

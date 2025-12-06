@@ -3,4 +3,6 @@ export type CardProps = {
   subtitle?: string;
   children?: React.ReactNode;
   backgroundColor?: string;
+  showTipIcon?: boolean;
+  onTipPress?: () => void;
 };
