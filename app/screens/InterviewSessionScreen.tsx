@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import Button, { ButtonText } from '../../components/button';
+import Button from '../../components/button';
 import Card from '../../components/card/Card';
 import ResponseRecorder from '../../components/responseRecorder/ResponseRecorder';
 import ProgressBar from '../../components/progressBar/ProgressBar';
@@ -90,7 +90,7 @@ export default function InterviewSessionScreen() {
             size="small"
             onPress={handleEndInterview}
           >
-            <ButtonText variant="outline">Avsluta</ButtonText>
+            Avsluta
           </Button>
 
           <CircularTimer
@@ -106,7 +106,7 @@ export default function InterviewSessionScreen() {
               size="small"
               onPress={handleNextQuestion}
             >
-              <ButtonText variant="primary">Nästa</ButtonText>
+              Nästa
             </Button>
           ) : (
             <Button
@@ -114,7 +114,7 @@ export default function InterviewSessionScreen() {
               size="small"
               onPress={handleEndInterview}
             >
-              <ButtonText variant="primary">Slutför</ButtonText>
+              Slutför
             </Button>
           )}
         </View>
@@ -163,7 +163,7 @@ export default function InterviewSessionScreen() {
           onStartRecording={() => setIsRecording(true)}
           onStopRecording={() => setIsRecording(false)}
         />
-        
+
         <Card
           title={`Fråga ${currentQuestion}`}
           subtitle={MOCK_QUESTIONS[currentQuestion - 1]}
@@ -171,16 +171,16 @@ export default function InterviewSessionScreen() {
           onTipPress={() => setShowTip(!showTip)}
         >
           {showTip && (
-            <View style={{ 
-              marginTop: SizeTokens.spacing.md, 
+            <View style={{
+              marginTop: SizeTokens.spacing.md,
               padding: SizeTokens.spacing.md,
               backgroundColor: ColorTokens.yellow[50],
               borderRadius: 8,
               borderLeftWidth: 3,
               borderLeftColor: ColorTokens.yellow[500]
             }}>
-              <Text style={{ 
-                fontSize: 14, 
+              <Text style={{
+                fontSize: 14,
                 color: ColorTokens.gray[700],
                 lineHeight: 20
               }}>

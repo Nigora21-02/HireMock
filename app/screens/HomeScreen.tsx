@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Alert } from 'react-native';
-import Button, { ButtonText } from '../../components/button';
+import Button from '../../components/button';
 import { ColorTokens } from '../../constants/tokens';
 import ProgressBar from '../../components/progressBar/ProgressBar';
 
@@ -22,29 +22,28 @@ export default function HomeScreen() {
       <Text style={styles.subtitle}>Välkommen till HireMock!</Text>
       <View style={styles.buttonContainer}>
         <Button
-          onPress={handlePrimaryAction}
           variant="primary"
-          size="medium"
+          onPress={handlePrimaryAction}
         >
-          <ButtonText variant="primary" size="medium">Ta nästa steg mot drömjobbet !</ButtonText>
+          Ta nästa steg mot drömjobbet!
         </Button>
+
         <Button
-          onPress={handleSecondaryAction}
-          variant="pink"
-          size="medium"
-        >
-          <ButtonText variant="pink" size="medium">Mitt CV</ButtonText>
-        </Button>
+          variant="secondary"
+          iconPosition='left'
+          icon='home'
+          onPress={handleSecondaryAction}>Mitt CV</Button>
+
+
+
 
         <View style={{ gap: 15, marginTop: 20 }}>
           <ProgressBar progress={progress} />
-          <Button
-            onPress={() => setProgress(p => (p >= 100 ? 0 : Math.min(100, p + 10)))}
-            variant="outline"
-            size="medium"
-          >
-            <ButtonText variant="outline" size="medium">Increase Progress</ButtonText>
+          <Button variant="outline" onPress={() => setProgress(prev => Math.min(prev + 0.1, 1))}>
+            Ta nästa steg mot drömjobbet!
           </Button>
+
+
         </View>
       </View>
     </View>

@@ -39,7 +39,7 @@ export const lightTheme: Theme = {
   mode: 'light',
   colors: {
     primary: {
-      main: ColorTokens.blue[500],
+      main: ColorTokens.blue[700],
       light: ColorTokens.blue[400],
       dark: ColorTokens.blue[600],
     },

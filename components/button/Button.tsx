@@ -35,7 +35,7 @@ export default function Button({
       accessibilityLabel={accessibilityLabel}
       style={styles.container}
     >
-      <Text>{children}</Text>
+      <Text style={styles.text}>{children}</Text>
     </Pressable>
   );
 }

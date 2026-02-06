@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
 import BlockSelector from '../../components/blockSelector/BlockSelector';
 import TimerSelector from '../../components/timerSelector/TimerSelector';
-import Button, { ButtonText } from '../../components/button';
+import Button from '../../components/button';
 import { ColorTokens, SizeTokens } from '../../constants/tokens';
 
 
@@ -64,9 +64,10 @@ export default function InterviewScreen() {
           <Button
             variant='primary'
             size='medium'
+            fullWidth={false}
             onPress={handleStartInterview}
           >
-            <ButtonText variant='primary'>Starta AI-intervju</ButtonText>
+            Starta AI-intervju
           </Button>
         </View>
       </View>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Alert } from 'react-native';
-import Button, { ButtonText } from '../../components/button';
+import Button from '../../components/button';
 import { ColorTokens } from '../../constants/tokens';
 
 export default function ProfileScreen() {
@@ -30,7 +30,7 @@ export default function ProfileScreen() {
           variant="primary"
           size="medium"
         >
-          <ButtonText variant="primary" size="medium">Redigera profil</ButtonText>
+          Redigera profil
         </Button>
         
         <Button
@@ -38,7 +38,7 @@ export default function ProfileScreen() {
           variant="pink"
           size="medium"
         >
-          <ButtonText variant="pink" size="medium">Inställningar</ButtonText>
+          Inställningar
         </Button>
         
         <Button
@@ -46,7 +46,7 @@ export default function ProfileScreen() {
           variant="danger"
           size="medium"
         >
-          <ButtonText variant="danger" size="medium">Logga ut</ButtonText>
+          Logga ut
         </Button>
       </View>
     </View>

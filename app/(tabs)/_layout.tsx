@@ -9,19 +9,14 @@ export default function TabLayout() {
       screenOptions={{
         tabBarActiveTintColor: ColorTokens.blue[800],
         tabBarInactiveTintColor: ColorTokens.gray[600],
-        headerStyle: {
-          backgroundColor: ColorTokens.blue[800],
-        },
-        headerTintColor: ColorTokens.white,
-        headerTitleStyle: {
-          fontWeight: 'bold',
-        },
+        
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Hem',
+          headerShown: false,
+          title: '',
           tabBarIcon: ({ focused }) => (
             <Icon
               {...iconMap.home}
