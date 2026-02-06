@@ -39,9 +39,9 @@ export const lightTheme: Theme = {
   mode: 'light',
   colors: {
     primary: {
-      main: ColorTokens.purple[500],
-      light: ColorTokens.purple[400],
-      dark: ColorTokens.purple[600],
+      main: ColorTokens.blue[500],
+      light: ColorTokens.blue[400],
+      dark: ColorTokens.blue[600],
     },
     success: ColorTokens.green[500],
     warning: ColorTokens.yellow[500],
@@ -51,8 +51,8 @@ export const lightTheme: Theme = {
     black: ColorTokens.black,
     
     // Semantic colors (light theme specific)
-    background: ColorTokens.white,
-    surface: ColorTokens.gray[50],
+    background: ColorTokens.gray[50],
+    surface: ColorTokens.white,
     text: {
       primary: ColorTokens.gray[900],
       secondary: ColorTokens.gray[600],

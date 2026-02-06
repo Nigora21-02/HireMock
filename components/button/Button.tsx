@@ -1,9 +1,8 @@
 import React from 'react';
-import { TouchableOpacity, Text, View } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
-import { ButtonProps } from './types/ButtonProps';
+import { Text, Pressable } from 'react-native';
+import { ButtonProps} from './types/ButtonProps';
 import { getButtonStyle } from './styles/getButtonStyle';
-import { GradientTokens } from '../../constants/tokens';
+import { defaultTheme } from '../../constants';
 
 
 export default function Button({
@@ -13,90 +12,30 @@ export default function Button({
   size = 'medium',
   disabled = false,
   fullWidth = false,
-  icon,
-  iconPosition = 'left',
   loading = false,
-  loadingText,
   style,
   accessibilityLabel,
 }: ButtonProps) {
+  const theme = defaultTheme;
 
-  const buttonStyle = getButtonStyle(variant, size, disabled, loading, fullWidth, style);
-  
-  // Use gradient for primary variant
-  if (variant === 'primary' && !disabled && !loading) {
-    const gradientConfig = GradientTokens.primary;
-    return (
-      <TouchableOpacity
-        onPress={onPress}
-        disabled={disabled || loading}
-        activeOpacity={0.8}
-        accessibilityLabel={accessibilityLabel}
-      >
-        <LinearGradient
-          colors={['#160078', '#7226ff']}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 0 }}
-          style={Array.isArray(buttonStyle) ? Object.assign({}, ...buttonStyle) : buttonStyle}
-        >
-          {children}
-        </LinearGradient>
-      </TouchableOpacity>
-    );
-  }
+  const styles = getButtonStyle({
+    variant,
+    size,
+    disabled,
+    loading,
+    fullWidth,
+    style,
+    theme,
+  });
 
-  // Use pink gradient for pink variant
-  if (variant === 'pink' && !disabled && !loading) {
-    return (
-      <TouchableOpacity
-        onPress={onPress}
-        disabled={disabled || loading}
-        activeOpacity={0.8}
-        accessibilityLabel={accessibilityLabel}
-      >
-        <LinearGradient
-          colors={GradientTokens.pink.colors as [string, string]}
-          start={GradientTokens.pink.start}
-          end={GradientTokens.pink.end}
-          style={Array.isArray(buttonStyle) ? Object.assign({}, ...buttonStyle) : buttonStyle}
-        >
-          {children}
-        </LinearGradient>
-      </TouchableOpacity>
-    );
-  }
-
-  
-  if (variant === 'danger' && !disabled && !loading) {
-    return (
-      <TouchableOpacity
-        onPress={onPress}
-        disabled={disabled || loading}
-        activeOpacity={0.8}
-        accessibilityLabel={accessibilityLabel}
-      >
-        <LinearGradient
-          colors={GradientTokens.error.colors as [string, string]}
-          start={GradientTokens.error.start}
-          end={GradientTokens.error.end}
-          style={Array.isArray(buttonStyle) ? Object.assign({}, ...buttonStyle) : buttonStyle}
-        >
-          {children}
-        </LinearGradient>
-      </TouchableOpacity>
-    );
-  }
-
-  
   return (
-    <TouchableOpacity
-      style={buttonStyle}
+    <Pressable
       onPress={onPress}
       disabled={disabled || loading}
-      activeOpacity={0.8}
       accessibilityLabel={accessibilityLabel}
+      style={styles.container}
     >
-      {children}
-    </TouchableOpacity>
+      <Text>{children}</Text>
+    </Pressable>
   );
 }

@@ -1,99 +1,85 @@
 import { ViewStyle, TextStyle } from 'react-native';
 import { ButtonVariant, ButtonSize } from './types/ButtonProps';
-import { styles } from './styles';
+import { styles } from './styles/styles';
+import { Theme } from '#/constants';
 
-// Get button container styles
-export const getButtonStyle = (
-  variant: ButtonVariant,
-  size: ButtonSize,
-  disabled: boolean,
-  loading: boolean,
-  fullWidth: boolean,
-  customStyle?: ViewStyle
-): ViewStyle[] => {
-  const baseStyle: ViewStyle[] = [styles.button, styles[size]];
-  
-  // Full width styling
+export type GetButtonStyleParams = {
+  variant: ButtonVariant;
+  size: ButtonSize;
+  disabled: boolean;
+  loading: boolean;
+  fullWidth: boolean;
+  style?: ViewStyle;
+  theme: Theme;
+};
+
+export type ButtonStyles = {
+  container: ViewStyle[];
+  text: TextStyle[];
+};
+
+export function getButtonStyle({
+  variant,
+  size,
+  disabled,
+  loading,
+  fullWidth,
+  style,
+  theme,
+}: GetButtonStyleParams): ButtonStyles {
+  const container: ViewStyle[] = [
+    styles.button,
+    styles[size],
+  ];
+
+  const text: TextStyle[] = [
+    styles.text,
+    styles[`${size}Text`],
+  ];
+
   if (fullWidth) {
-    baseStyle.push(styles.fullWidth);
+    container.push(styles.fullWidth);
   }
-  
-  // Variant styling
-  switch (variant) {
-    case 'primary':
-      baseStyle.push(styles.primaryButton);
-      break;
-    case 'secondary':
-      baseStyle.push(styles.secondaryButton);
-      break;
-    case 'outline':
-      baseStyle.push(styles.outlineButton);
-      break;
-    case 'danger':
-      baseStyle.push(styles.dangerButton);
-      break;
-    case 'success':
-      baseStyle.push(styles.successButton);
-      break;
-    case 'ghost':
-      baseStyle.push(styles.ghostButton);
-      break;
-  }
-  
-  // Disabled/loading state
-  if (disabled || loading) {
-    baseStyle.push(styles.disabledButton);
-  }
-  
-  // Custom styling
-  if (customStyle) {
-    baseStyle.push(customStyle);
-  }
-  
-  return baseStyle;
-};
 
-// Get button text styles
-export const getTextStyle = (
-  variant: ButtonVariant,
-  size: ButtonSize,
-  disabled: boolean,
-  loading: boolean,
-  customTextStyle?: TextStyle
-): TextStyle[] => {
-  const baseStyle: any[] = [styles.text, styles[`${size}Text` as keyof typeof styles]];
-  
-  // Variant text styling
   switch (variant) {
     case 'primary':
-      baseStyle.push(styles.primaryText);
+      container.push({ backgroundColor: theme.colors.primary.main });
+      text.push({ color: theme.colors.white });
       break;
+
     case 'secondary':
-      baseStyle.push(styles.secondaryText);
+      container.push({ backgroundColor: theme.colors.surface });
+      text.push({ color: theme.colors.primary.main });
       break;
+
     case 'outline':
-      baseStyle.push(styles.outlineText);
+      container.push({
+        backgroundColor: 'transparent',
+        borderWidth: 1,
+        borderColor: theme.colors.border,
+      });
+      text.push({ color: theme.colors.primary.main });
       break;
+
     case 'danger':
-      baseStyle.push(styles.dangerText);
+      container.push({ backgroundColor: theme.colors.error });
+      text.push({ color: theme.colors.white });
       break;
-    case 'success':
-      baseStyle.push(styles.successText);
-      break;
+
     case 'ghost':
-      baseStyle.push(styles.ghostText);
+      container.push({ backgroundColor: 'transparent' });
+      text.push({ color: theme.colors.primary.main });
       break;
   }
-  
-  // Disabled/loading text state
+
   if (disabled || loading) {
-    baseStyle.push(styles.disabledText);
+    container.push({ opacity: 0.5 });
+    text.push({ color: theme.colors.text.disabled });
   }
-  
-  // Custom text styling
-  if (customTextStyle) {
-    baseStyle.push(customTextStyle);
+
+  if (style) {
+    container.push(style);
   }
-  
-  return baseStyle;
-};
+
+  return { container, text };
+}
